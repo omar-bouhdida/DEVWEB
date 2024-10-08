@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EtudiantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,11 +28,15 @@ Route::get('/contact', function () {
 //     return view('etudiant',compact('nom','prenom'));
 // });
 
-Route::get('/etudiant', function () {
-    $nom='Omar';
-    $prenom='BOUHDIDA';
-    return view('etudiant',[
-        'nom'=>$nom,
-        'prenom'=>$prenom,
-    ]);
-});
+// Route::get('/etudiant', function () {
+//     $nom='Omar';
+//     $prenom='BOUHDIDA';
+//     return view('etudiant',[
+//         'nom'=>$nom,
+//         'prenom'=>$prenom,
+//     ]);
+// });
+
+// Route::get('/etudiant', [EtudiantController::class,"index"]);
+
+Route::resource('etudiant','App\Http\Controllers\EtudiantController');
